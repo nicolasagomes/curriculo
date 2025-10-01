@@ -136,3 +136,21 @@ footer a:hover {
 footer i {
     margin-right: 0.5em;
 }
+
+
+#formacao img {
+    height: 24px; /* Tamanho menor */
+    vertical-align: middle;
+    margin-right: 6px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#cursos img {
+    height: 24px; /* Tamanho menor */
+    vertical-align: middle;
+    margin-right: 6px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
