@@ -1,11 +1,26 @@
-let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
 
-function showNextImage() {
-    const items = document.querySelectorAll('.carousel-item');
-    items[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % items.length;
-    items[currentIndex].classList.add('active');
-    document.querySelector('.carousel-inner').style.transform = `translateX(-${currentIndex * 100}%)`;
-}
+  // Alternar Menu Mobile
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
 
-setInterval(showNextImage, 3000); // Muda a imagem a cada 3 segundos
+  // Fechar menu ao clicar em algum link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  // Efeito simples de transparência na Navbar ao rolar
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+    } else {
+      navbar.style.boxShadow = 'none';
+    }
+  });
+});
